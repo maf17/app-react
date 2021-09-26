@@ -12,11 +12,11 @@ const FormularioCadastro = (props) => {
     let { values, setValues } = useState(camposIniciaisDeValores)
     
     const manipuladorInputChange = e => {
-        let { nomeCompleto, value} = e.target
+        let { name, value} = e.target
 
         setValues({
             ...values,
-            [nomeCompleto]: value
+            [name]: value
         })
     }
 
