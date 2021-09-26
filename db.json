@@ -1,0 +1,23 @@
+{
+    "contatos": [
+        {
+            "id": 1,
+            "nomeCompleto": "Sebastian",
+            "telefone": "95-9998725",
+            "email": "sebastian@codingthesmartway.com"
+          },
+          {
+            "id": 2,
+            "nomeCompleto": "Steve",
+            "telefone": "61-6674785",
+            "email": "steve@codingthesmartway.com"
+          },
+          {
+            "id": 3,
+            "nomeCompleto": "Ann",
+            "telefone": "92-8882475",
+            "email": "ann@codingthesmartway.com"
+          }
+        ]
+
+}
