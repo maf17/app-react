@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
 
 const FormularioCadastro = (props) => {
 
@@ -6,10 +7,25 @@ const FormularioCadastro = (props) => {
     const camposIniciaisDeValores = {
         nomeCompleto:'',
         telefone: '',
+        email: '',
         endereco: '',
     }
 
-    let { values, setValues } = useState(camposIniciaisDeValores)
+
+    let [values, setValues] = useState(camposIniciaisDeValores)
+
+    useEffect( () => {
+        if(props.currentId == '') {
+            setValues({
+                ...camposIniciaisDeValores
+            })
+        } else {
+            setValues({
+                ...props.dadosContatos[props.currentId]
+            })
+        }
+    }, [props.currentId, props.dadosContatos] )
+
     
     const manipuladorInputChange = e => {
         let { name, value} = e.target
@@ -67,7 +83,7 @@ const FormularioCadastro = (props) => {
             </div>
 
             <div className="form-group mt-2">
-                <input type="submit" value={"Salvar"} className="btn btn-primary btn-block" />
+                <input type="submit" value={props.currentId == '' ? "Salvar" : "Atualizar"} className="btn btn-primary btn-block" />
             </div>
         </form>
     )
